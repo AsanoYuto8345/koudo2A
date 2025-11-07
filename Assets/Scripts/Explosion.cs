@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+    [SerializeField]
     bool isHandStanding = false;
 
     void Start() {
