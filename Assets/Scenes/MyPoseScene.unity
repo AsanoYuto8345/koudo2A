@@ -218,6 +218,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &407949030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5773957062392031377, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+  m_PrefabInstance: {fileID: 761765085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &487419078
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +759,7 @@ PrefabInstance:
       objectReference: {fileID: 8823569652038079056, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
     - target: {fileID: 8820866526498997791, guid: ce9491a5df028fd4ca0a5130dbaa4fec, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8820866526498997791, guid: ce9491a5df028fd4ca0a5130dbaa4fec, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -794,7 +799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8820866526498997791, guid: ce9491a5df028fd4ca0a5130dbaa4fec, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: setHandStanding
+      value: setHandStandingTrue
       objectReference: {fileID: 0}
     - target: {fileID: 8820866526498997791, guid: ce9491a5df028fd4ca0a5130dbaa4fec, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -881,6 +886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d781b97740eb4c5e9ddd217b9758e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHandStanding: 0
+  hand: {fileID: 407949030}
 --- !u!1 &588876762
 GameObject:
   m_ObjectHideFlags: 0
