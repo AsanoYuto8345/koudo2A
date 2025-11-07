@@ -7,10 +7,25 @@ public class Explosion : MonoBehaviour
     [SerializeField]
     bool isHandStanding = false;
 
+    [SerializeField]
+    GameObject hand;
+
+    Vector3 handInitialPosition;
+
     void Start() {
     }
 
     void Update() {
+        if (isHandStanding) {
+            if (hand.transform.position.z - handInitialPosition.z > 0.2f) {
+                Debug.Log("Distance is greater than 0.2f, triggering explosion");
+            }
+        }
+    }
+
+    public void setHandStandingTrue() {
+        isHandStanding = true;
+        handInitialPosition = hand.transform.position;
     }
 
     public void setHandStanding(bool standing) {
