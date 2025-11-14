@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
+using System;
 
 public class GestureAction : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class GestureAction : MonoBehaviour
     GameObject hand;
 
     Vector3 handInitialPosition;
+    public UnityEvent Action;
 
     void Start()
     {
@@ -25,6 +28,10 @@ public class GestureAction : MonoBehaviour
             {
                 case "OpenHand":
                     Debug.Log("Open Hand Gesture Activated");
+                    if (MovedOverVector(new Vector3(0, 0, 0.2f)))
+                    {
+                        Action?.Invoke();
+                    }
                     break;
                 case "Fist":
                     Debug.Log("Fist Gesture Activated");
@@ -41,9 +48,9 @@ public class GestureAction : MonoBehaviour
 
     private bool MovedOverVector(Vector3 vector)
     {
-        return hand.transform.position.z - handInitialPosition.z > vector.z &&
-               hand.transform.position.y - handInitialPosition.y > vector.y &&
-               hand.transform.position.x - handInitialPosition.x > vector.x;
+        return Math.Abs(hand.transform.position.z - handInitialPosition.z + vector.z) >= Math.Abs(vector.z * 2) &&
+               Math.Abs(hand.transform.position.y - handInitialPosition.y + vector.y) >= Math.Abs(vector.y * 2) &&
+               Math.Abs(hand.transform.position.x - handInitialPosition.x + vector.x) >= Math.Abs(vector.x * 2);
     }
 
     public void ActivateGesture()
@@ -56,4 +63,5 @@ public class GestureAction : MonoBehaviour
     {
         isGestureActive = false;
     }
+
 }

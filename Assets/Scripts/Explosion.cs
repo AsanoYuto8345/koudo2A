@@ -16,13 +16,13 @@ public class Explosion : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            TriggerExplosion(new Vector3(10f, 5f, 30f));
+            TriggerExplosion();
         }
     }
 
-    public void TriggerExplosion(Vector3 pos)
+    public void TriggerExplosion()
     {
-        StartCoroutine(Explode(pos));
+        StartCoroutine(Explode(new Vector3(10f, 5f, 30f)));
     }
 
     IEnumerator Explode(Vector3 pos)
