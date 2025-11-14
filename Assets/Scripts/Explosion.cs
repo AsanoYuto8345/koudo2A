@@ -16,6 +16,7 @@ public class Explosion : MonoBehaviour
     }
 
     void Update() {
+        // explosion
         if (isHandStanding) {
             if (hand.transform.position.z - handInitialPosition.z > 0.2f) {
                 Debug.Log("Distance is greater than 0.2f, triggering explosion");

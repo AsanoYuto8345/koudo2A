@@ -3,10 +3,10 @@ using UnityEngine;
 public class GestureAction : MonoBehaviour
 {
     [SerializeField]
-    string gestureName;
+    public string gestureName;
 
     [SerializeField]
-    bool isGestureActive = false;
+    public bool isGestureActive = false;
 
     [SerializeField]
     GameObject hand;
