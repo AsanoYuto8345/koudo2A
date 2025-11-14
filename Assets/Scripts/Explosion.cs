@@ -1,39 +1,35 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField]
-    bool isHandStanding = false;
+    // Start is called before the first frame update
+    public float lifeTime = 1f;
+    public GameObject explosionEffect;
 
-    [SerializeField]
-    GameObject hand;
-
-    Vector3 handInitialPosition;
-
-    void Start() {
+    void Start()
+    {
+        explosionEffect.SetActive(false);
     }
 
-    void Update() {
-        // explosion
-        if (isHandStanding) {
-            if (hand.transform.position.z - handInitialPosition.z > 0.2f) {
-                Debug.Log("Distance is greater than 0.2f, triggering explosion");
-            }
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            TriggerExplosion(new Vector3(10f, 5f, 30f));
         }
     }
 
-    public void setHandStandingTrue() {
-        isHandStanding = true;
-        handInitialPosition = hand.transform.position;
+    public void TriggerExplosion(Vector3 pos)
+    {
+        StartCoroutine(Explode(pos));
     }
 
-    public void setHandStanding(bool standing) {
-        isHandStanding = standing;
-    }
-
-    public bool getHandStanding() {
-        return isHandStanding;
+    IEnumerator Explode(Vector3 pos)
+    {
+        explosionEffect.transform.position = pos;
+        explosionEffect.SetActive(true);
+        yield return new WaitForSeconds(lifeTime);
+        explosionEffect.SetActive(false);
     }
 }
