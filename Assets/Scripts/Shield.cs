@@ -7,7 +7,7 @@ public class Shield : MonoBehaviour
     public string[] collisionTags;
     public Renderer shiledRenderer;
 
-    public wvoid activeShield()
+    public void activeShield()
     {
         shiledRenderer.enabled = true;
     }
