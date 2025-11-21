@@ -64,4 +64,8 @@ public class GestureAction : MonoBehaviour
         isGestureActive = false;
     }
 
+    public void Log(string message)
+    {
+        Debug.Log($"[GestureAction - {GetInstanceID()}]: {message}");
+    }
 }
