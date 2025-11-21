@@ -63,13 +63,4 @@ public class Enemy : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position + new Vector3(0, 1, 0), firePoint.rotation);
     }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Attack"))
-        {
-            if (general != null) general.score += 100;
-            Destroy(gameObject);
-        }
-    }
 }

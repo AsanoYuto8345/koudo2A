@@ -19,6 +19,9 @@ TagManager:
   - Laser
   - Walls
   - Bullet
+  - Attack
+  - Enemy
+  - Shield
   layers:
   - Default
   - TransparentFX

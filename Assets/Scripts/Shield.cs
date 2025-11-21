@@ -16,16 +16,4 @@ public class Shield : MonoBehaviour
     {
         shiledRenderer.enabled = false;
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        foreach (string tag in collisionTags)
-        {
-            if (collision.gameObject.CompareTag(tag))
-            {
-                Destroy(collision.gameObject);
-                break;
-            }
-        }
-    }
 }
