@@ -5,6 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - QDSUIBackplateGradient
+  - QDSUIToggleButton
+  - QDSUIToggleSwitch
+  - QDSUITooltip
+  - QDSUISharedThemeColor
+  - QDSUIAccentColor
+  - QDSUIBorderlessButton
+  - QDSUISecondaryButton
+  - QDSUIToggleBorderlessButton
+  - QDSUIIcon
+  - QDSUITextSecondaryColor
+  - Laser
+  - Walls
+  - Bullet
   layers:
   - Default
   - TransparentFX

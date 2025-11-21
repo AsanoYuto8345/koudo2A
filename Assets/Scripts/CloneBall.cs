@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class BallShot : MonoBehaviour
 {
-    [SerializeField] GameObject sphere;
-    [SerializeField] GameObject launchPoint;
-    private float speed = 300;
-
-    public void ShootBall()
+    public Vector3 startPos;
+    public void Start()
     {
-        GameObject ball = Instantiate(sphere, launchPoint.transform.position, launchPoint.transform.rotation);
-        Rigidbody rb = ball.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * speed);
+        startPos = transform.position;
+    }
+
+    public void Update()
+    {
+        transform.position += new Vector3(0f, 0f, -0.05f);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = startPos;
+        }
     }
 }
