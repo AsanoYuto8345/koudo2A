@@ -2,29 +2,29 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Header("ˆÚ“®‘¬“x")]
+    [Header("ï¿½Ú“ï¿½ï¿½ï¿½ï¿½x")]
     public float speed = 10f;
 
-    [Header("õ–½i•bj")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½bï¿½j")]
     public float lifeTime = 5f;
 
-    private Vector3 velocity;   // “™‘¬‰^“®‚Ì•ûŒüƒxƒNƒgƒ‹
+    private Vector3 velocity;   // ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½xï¿½Nï¿½gï¿½ï¿½
 
     void Start()
     {
-        // ”­Ë’n“_‚©‚çŒ©‚½Œ´“_•ûŒü‚ğ³‹K‰»
-        Vector3 targetDirection = (Vector3.zero - transform.position).normalized;
+        // ï¿½ï¿½ï¿½Ë’nï¿½_ï¿½ï¿½ï¿½çŒ©ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ğ³‹Kï¿½ï¿½
+        Vector3 targetDirection = (new Vector3(0,1,0) - transform.position).normalized;
 
-        // “™‘¬’¼ü‰^“®‚Ì‘¬“xƒxƒNƒgƒ‹
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½xï¿½xï¿½Nï¿½gï¿½ï¿½
         velocity = targetDirection * speed;
 
-        // ©“®‚ÅÁ‚¦‚é
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½
         Destroy(gameObject, lifeTime);
     }
 
     void Update()
     {
-        // –ˆƒtƒŒ[ƒ€A“™‘¬’¼ü‰^“®‚ÅˆÚ“®
+        // ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ÅˆÚ“ï¿½
         transform.position += velocity * Time.deltaTime;
     }
 }

@@ -2,48 +2,49 @@ using UnityEngine;
 
 public class SpawnOnCircle : MonoBehaviour
 {
-    [Header("’†S‚Æ‚È‚éƒIƒuƒWƒFƒNƒg")]
+    [Header("ä¸­å¿ƒã¨ãªã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ")]
     public Transform center;
 
-    [Header("•¡»‚·‚éƒvƒŒƒnƒu")]
+    [Header("è¤‡è£½ã™ã‚‹ãƒ—ãƒ¬ãƒãƒ–")]
     public GameObject prefab;
 
-    [Header("”z’u‚·‚é”")]
-    public int count = 8;
-
-    [Header("”¼Œa")]
+    [Header("åŠå¾„")]
     public float radius = 3f;
 
-    void Start()
+    [Header("ã‚¹ãƒãƒ¼ãƒ³é–“éš”ï¼ˆç§’ï¼‰")]
+    public float spawnInterval = 1f;
+
+    private float timer = 0f;
+
+    void Update()
     {
-        SpawnObjects();
+        if (center == null || prefab == null) return;
+
+        timer += Time.deltaTime;
+
+        if (timer >= spawnInterval)
+        {
+            SpawnRandom();
+            timer = 0f;
+        }
     }
 
-    void SpawnObjects()
+    void SpawnRandom()
     {
-        if (center == null || prefab == null)
-        {
-            Debug.LogError("center‚Ü‚½‚Íprefab‚ªİ’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
-            return;
-        }
+        // ãƒ©ãƒ³ãƒ€ãƒ ãªè§’åº¦ 0ã€œ2Ï€
+        float angle = Random.Range(0f, Mathf.PI * 2f);
 
-        for (int i = 0; i < count; i++)
-        {
-            // ‰~üã‚ÌŠp“x‚ğŒvZ
-            float angle = i * Mathf.PI * 2f / count;
+        // å††å‘¨ä¸Šã®ä½ç½® (XZå¹³é¢)
+        Vector3 pos = new Vector3(
+            Mathf.Cos(angle) * radius,
+            0f,
+            Mathf.Sin(angle) * radius
+        );
 
-            // ”¼Œa•ª‚¸‚ç‚µ‚½À•W (X-Z •½–Ê)
-            Vector3 pos = new Vector3(
-                Mathf.Cos(angle) * radius,
-                0f,
-                Mathf.Sin(angle) * radius
-            );
+        // ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã«å¤‰æ›
+        Vector3 spawnPos = center.position + pos;
 
-            // ƒ[ƒ‹ƒhˆÊ’u‚É•ÏŠ·
-            Vector3 spawnPos = center.position + pos;
-
-            // ƒvƒŒƒnƒu‚ğ¶¬
-            Instantiate(prefab, spawnPos, Quaternion.identity);
-        }
+        // ãƒ—ãƒ¬ãƒãƒ–ã‚’ç”Ÿæˆ
+        Instantiate(prefab, spawnPos, Quaternion.identity);
     }
 }

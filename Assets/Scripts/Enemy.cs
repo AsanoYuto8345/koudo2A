@@ -2,34 +2,55 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("’e‚ÌƒvƒŒƒnƒu")]
+    public General general;
+    [Header("ï¿½eï¿½Ìƒvï¿½ï¿½ï¿½nï¿½u")]
     public GameObject bulletPrefab;
 
-    [Header("”­Ëƒ|ƒCƒ“ƒg")]
+    [Header("ï¿½ï¿½ï¿½Ëƒ|ï¿½Cï¿½ï¿½ï¿½g")]
     public Transform firePoint;
 
-    [Header("’e‚Ì‘¬“x")]
+    [Header("ï¿½eï¿½Ì‘ï¿½ï¿½x")]
     public float bulletSpeed = 10f;
 
-    [Header("”­ËŠÔŠu")]
+    [Header("ï¿½ï¿½ï¿½ËŠÔŠu")]
     public float fireInterval = 2f;
 
     private float timer = 0f;
 
+    void Start()
+    {
+        if (general == null)
+        {
+            // åå‰ãŒ "General" ã® GameObject ã‚’æ¢ã™
+            GameObject obj = GameObject.Find("General");
+
+            if (obj != null)
+            {
+                // General ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—ã—ã¦ä»£å…¥
+                general = obj.GetComponent<General>();
+            }
+            else
+            {
+                Debug.LogError("GameObject 'General' ãŒã‚·ãƒ¼ãƒ³å†…ã«è¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
+            }
+        }
+    }
+
+
     void Update()
     {
-        // (0,0,0) ‚Ì•ûŒü‚ÖŒü‚­
-        Vector3 targetPos = Vector3.zero; // –Ú“I’n‚ªí‚ÉŒ´“_
+        // (0,0,0) ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ÖŒï¿½ï¿½ï¿½
+        Vector3 targetPos = Vector3.zero; // ï¿½Ú“Iï¿½nï¿½ï¿½ï¿½ï¿½ÉŒï¿½ï¿½_
         Vector3 direction = (targetPos - transform.position);
 
-        direction.y = 0f; // …•½‰ñ“]‚¾‚¯‚É‚µ‚½‚¢i•s—v‚È‚çÁ‚µ‚ÄOKj
+        direction.y = 0f; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½sï¿½vï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½OKï¿½j
 
         if (direction != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(direction);
         }
 
-        // ˆê’èŠÔŠu‚Å’e‚ğŒ‚‚Â
+        // ï¿½ï¿½ï¿½ÔŠuï¿½Å’eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         timer += Time.deltaTime;
         if (timer >= fireInterval)
         {
@@ -40,6 +61,15 @@ public class Enemy : MonoBehaviour
 
     void FireBullet()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position + new Vector3(0,1,0), firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position + new Vector3(0, 1, 0), firePoint.rotation);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Attack"))
+        {
+            if (general != null) general.score += 100;
+            Destroy(gameObject);
+        }
     }
 }

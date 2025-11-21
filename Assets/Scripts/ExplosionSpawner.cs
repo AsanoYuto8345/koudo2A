@@ -2,18 +2,17 @@ using UnityEngine;
 
 public class ExplosionSpawner : MonoBehaviour
 {
-    [Header("”š”­ƒvƒŒƒnƒuiExplosion.cs•t‚«j")]
+    [Header("çˆ†ç™ºãƒ—ãƒ¬ãƒãƒ–ï¼ˆExplosion.csä»˜ãï¼‰")]
     public GameObject explosionPrefab;
 
-    [Header("”š”­‚³‚¹‚é‹——£")]
+    [Header("çˆ†ç™ºã•ã›ã‚‹è·é›¢")]
     public float explosionDistance = 5f;
-
     public void SpawnExplosion()
     {
-        // ©•ª‚Ì forward •ûŒü‚É explosionDistance —£‚ê‚½ˆÊ’u
+        // è‡ªåˆ†ã® forward æ–¹å‘ã« explosionDistance é›¢ã‚ŒãŸä½ç½®
         Vector3 spawnPos = transform.position + transform.forward * explosionDistance;
 
-        // ”š”­ƒvƒŒƒnƒu‚ğ¶¬
+        // çˆ†ç™ºãƒ—ãƒ¬ãƒãƒ–ã‚’ç”Ÿæˆ
         Instantiate(explosionPrefab, spawnPos, Quaternion.identity);
     }
 }
