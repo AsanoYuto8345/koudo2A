@@ -24406,7 +24406,7 @@ Transform:
   - {fileID: 7437440811578311328}
   - {fileID: 2915152194480774955}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &2717100797466082623
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -29341,7 +29341,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 10, y: 10, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9040517689715719653
 GameObject:
