@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &641871494169094419
+--- !u!1 &238884674369561177
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,84 +8,84 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 641871494169094416}
-  - component: {fileID: 1591067825773117045}
-  - component: {fileID: 6571995581707627220}
-  - component: {fileID: 5097758846434085667}
-  - component: {fileID: 641871494169094417}
-  - component: {fileID: 641871494169094418}
-  - component: {fileID: 641871494169094423}
-  - component: {fileID: 7840132469862324308}
+  - component: {fileID: 238884674369561178}
+  - component: {fileID: 2138164327695430975}
+  - component: {fileID: 5804218289465745822}
+  - component: {fileID: 5550178876526674025}
+  - component: {fileID: 238884674369561179}
+  - component: {fileID: 238884674369561176}
+  - component: {fileID: 238884674369561181}
+  - component: {fileID: -7407919010271777077}
   m_Layer: 0
-  m_Name: Shield
+  m_Name: OpenHand Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &641871494169094416
+--- !u!4 &238884674369561178
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641871494169094419}
+  m_GameObject: {fileID: 238884674369561177}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2840100012364731739}
+  - {fileID: 5898987295136713567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1591067825773117045
+--- !u!114 &2138164327695430975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641871494169094419}
+  m_GameObject: {fileID: 238884674369561177}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b14164f8f23faae4293baeb84485b3d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 0}
---- !u!114 &6571995581707627220
+--- !u!114 &5804218289465745822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641871494169094419}
+  m_GameObject: {fileID: 238884674369561177}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de76f7169412b8f4896235a1585d8939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selector: {fileID: 5097758846434085667}
+  _selector: {fileID: 5550178876526674025}
   _whenSelected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7840132469862324308}
+      - m_Target: {fileID: -7407919010271777077}
         m_TargetAssemblyTypeName: GestureAction, Assembly-CSharp
-        m_MethodName: ActivateGesture
-        m_Mode: 1
+        m_MethodName: Log
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Recongnition successful
+          m_StringArgument: Detected OpenHand Close
           m_BoolArgument: 1
         m_CallState: 2
   _whenUnselected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7840132469862324308}
+      - m_Target: {fileID: 238884674369561177}
         m_TargetAssemblyTypeName: GestureAction, Assembly-CSharp
-        m_MethodName: InactivateGesture
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -95,94 +95,94 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5097758846434085667
+--- !u!114 &5550178876526674025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641871494169094419}
+  m_GameObject: {fileID: 238884674369561177}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cd9780be7e512049b4d33d5c9d0ac92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeState: {fileID: 641871494169094417}
---- !u!114 &641871494169094417
+  _activeState: {fileID: 238884674369561179}
+--- !u!114 &238884674369561179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641871494169094419}
+  m_GameObject: {fileID: 238884674369561177}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aebd5da9a8bd22243b407f1927f4965b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _activeStates:
-  - {fileID: 641871494169094418}
-  - {fileID: 641871494169094423}
+  - {fileID: 238884674369561176}
+  - {fileID: 238884674369561181}
   _logicOperator: 0
---- !u!114 &641871494169094418
+--- !u!114 &238884674369561176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641871494169094419}
+  m_GameObject: {fileID: 238884674369561177}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f7cfb1f9629da4494ac0840f3a3cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hand: {fileID: 1591067825773117045}
+  _hand: {fileID: 2138164327695430975}
   _fingerFeatureStateProvider: {fileID: 0}
   _shapes:
-  - {fileID: 11400000, guid: 55734ff6ac9c48443ab37831fdd69d7b, type: 2}
---- !u!114 &641871494169094423
+  - {fileID: 11400000, guid: 4a3b8e6157d10b6478b98530bd35dcae, type: 2}
+--- !u!114 &238884674369561181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641871494169094419}
+  m_GameObject: {fileID: 238884674369561177}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6f9440d09721c849864899e8986e219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hand: {fileID: 1591067825773117045}
+  _hand: {fileID: 2138164327695430975}
   _transformFeatureStateProvider: {fileID: 0}
   _transformFeatureConfigs:
     _values:
     - _mode: 0
-      _feature: 4
-      _state: 12
+      _feature: 6
+      _state: 18
   _transformConfig:
     PositionOffset: {x: 0, y: 0, z: 0}
     RotationOffset: {x: 0, y: 0, z: 0}
     UpVectorType: 2
     FeatureThresholds: {fileID: 11400000, guid: 039cf5a7424e1e046b79287e9375cf09, type: 2}
---- !u!114 &7840132469862324308
+--- !u!114 &-7407919010271777077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641871494169094419}
+  m_GameObject: {fileID: 238884674369561177}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95e39ab1c70ee40f9b1bc3c28e57fb78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gestureName: Shield
+  gestureName: 
   isGestureActive: 0
   hand: {fileID: 0}
   Action:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &2815458198005891018
+--- !u!1 &5883357017898590670
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,9 +190,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2840100012364731739}
-  - component: {fileID: 1063559906505286583}
-  - component: {fileID: 79711298640133217}
+  - component: {fileID: 5898987295136713567}
+  - component: {fileID: 8680090425096666547}
+  - component: {fileID: 8623363429605319269}
   m_Layer: 0
   m_Name: PoseDetectionGun
   m_TagString: Untagged
@@ -200,28 +200,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2840100012364731739
+--- !u!4 &5898987295136713567
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815458198005891018}
+  m_GameObject: {fileID: 5883357017898590670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 641871494169094416}
+  m_Father: {fileID: 238884674369561178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1063559906505286583
+--- !u!82 &8680090425096666547
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815458198005891018}
+  m_GameObject: {fileID: 5883357017898590670}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -311,19 +311,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &79711298640133217
+--- !u!114 &8623363429605319269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815458198005891018}
+  m_GameObject: {fileID: 5883357017898590670}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 925ef87c5bafc37469a2f7ec825dee4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 1063559906505286583}
+  _audioSource: {fileID: 8680090425096666547}
   _audioClips:
   - {fileID: 8300000, guid: e37b07310ea895b42aab47a925469ea2, type: 3}
   - {fileID: 8300000, guid: 09261974b330663419f6e892d56cee88, type: 3}
